@@ -31,7 +31,7 @@ https://developer.android.com/guide/topics/ui/layout/recyclerview
 The back-end is up and running, so you should be able to add and delete items.
 Also solve the issues mentioned in PostTask:
 
-![Bild](src/image.png)
+![Bild](https://github.com/FontysVenlo/android-introduction/raw/master/docs/img/image.png)
 
 *still some android issues to be solved, like updating UI from async thread
 See line 52, 55, 58
