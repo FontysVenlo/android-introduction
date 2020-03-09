@@ -12,12 +12,12 @@ Introduction to Android - PRJ4 course of Fontys Venlo
 
 * Individual deliverable, implement the following app: Based on constraint layout, this app should contain **3 rows of each 2 buttons and one image view**. If you click the first button then **same image should appear in the image view**, if you click the second button that image should change. Per row you should use different images, so in total you need 6 image resources.
 More information about constraint layout you find in: [Layout information](https://developer.android.com/reference/android/support/constraint/ConstraintLayout)
-* Next you *must commit the solution to your personal assignments repository*, follow the guidelines in the document android_ignorelists.pdf. These guidelines are important, you prevent ending up your repository with al lot of generated files. In case you use subversion the principles are the same and the ignore lists also.
+* Next you *must commit the solution to your personal assignments repository*, follow the guidelines in [docs](https://github.com/FontysVenlo/android-introduction/tree/master/docs/android-ignore.md). These guidelines are important, you prevent ending up your repository with al lot of generated files. 
 
 ## Preparations
 * Continue reading and executing the introduction tutorial, starting in Chapter 11 – 17.  
 [Android tutorial](http://www.vogella.com/tutorials/Android/article.html#androidstudio_starter)
-* List views more specific recycler views, read and execute: http://www.vogella.com/tutorials/AndroidRecyclerView/article.html
+* List views more specific recycler views, read and execute: [Android Recycler View](http://www.vogella.com/tutorials/AndroidRecyclerView/article.html) 
 Find out what a LayoutInflater is/does.
 * For more background info on recycler views  see:
 [Recycler view](https://developer.android.com/guide/topics/ui/layout/recyclerview)
