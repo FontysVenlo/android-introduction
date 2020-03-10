@@ -17,8 +17,22 @@ jobs:
           path: output
       - uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
-          args: "--standalone --output=output/android-introduction-and-assignments.docx docs/import-existing-android-app-2-github/text.md"
+          args: "--standalone --output=output/android-introduction-and-assignments.docx docs/README.md docs/import-existing-android-app-2-github/text.md"
       - uses: actions/upload-artifact@master
         with:
           name: android-introduction-and-assignments.docx
+          path: output
+      - uses: docker://pandoc/latex:2.9
+        with: # needs a README in your repo root!
+          args: "--standalone --output=output/import-existing-android-app-2-github.docx docs/import-existing-android-app-2-github/text.md"
+      - uses: actions/upload-artifact@master
+        with:
+          name: import-existing-android-app-2-github.docx
+          path: output
+      - uses: docker://pandoc/latex:2.9
+        with: # needs a README in your repo root!
+          args: "--standalone --output=output/import-existing-android-app-2-github.pdf docs/import-existing-android-app-2-github/text.md"
+      - uses: actions/upload-artifact@master
+        with:
+          name: import-existing-android-app-2-github.pdf
           path: output
