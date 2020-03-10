@@ -7,6 +7,7 @@ Introduction to Android - PRJ4 course of Fontys Venlo
 * Install android studio version (latest), see: [Android Studio](https://developer.android.com/studio)
 * Read “Everything you need to build on Android”, see: [Android Studio features](https://developer.android.com/studio/features/)
 * Read and execute this introduction tutorial, starting in Chapter 5 –up to 7.4 (gridlayout is deprecated), 9 and 10: [Android Tutorial starter](http://www.vogella.com/tutorials/Android/article.html#androidstudio_starter)
+*  :warning: How to put your local code into github, see: [import existing android app to github](https://github.com/FontysVenlo/android-introduction/blob/master/docs/import-existing-android-app-2-github/text.md)
 
 ## Assignment 1
 

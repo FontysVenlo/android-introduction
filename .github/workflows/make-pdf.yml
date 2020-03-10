@@ -13,12 +13,12 @@ jobs:
           args: "--standalone --output=output/README.pdf docs/README.md"
       - uses: actions/upload-artifact@master
         with:
-          name: readme.pdf
+          name: android-introduction-and-assignments.pdf
           path: output
       - uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
           args: "--standalone --output=output/README.docx docs/README.md"
       - uses: actions/upload-artifact@master
         with:
-          name: readme.docx
+          name: android-introduction-and-assignments.docx
           path: output
