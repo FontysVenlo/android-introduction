@@ -16,7 +16,7 @@ More information about constraint layout you find in: [Layout information](https
 * Next you *must commit the solution to your personal assignments repository*. Therefore you will receive an invitation link to join the assignment in github classroom. 
 
 ## Preparations
-* Continue reading and executing the introduction tutorial, starting in Chapter 1 1 – 17.  
+* Continue reading and executing the introduction tutorial, starting in Chapter 11 – 17.  
 [Android tutorial](http://www.vogella.com/tutorials/Android/article.html#androidstudio_starter)
 * List views more specific recycler views, read and execute: [Android Recycler View](http://www.vogella.com/tutorials/AndroidRecyclerView/article.html) 
 Find out what a LayoutInflater is/does.
@@ -28,18 +28,7 @@ Find out what a LayoutInflater is/does.
 * Individual deliverable, implement the following app: Based on the previous discussed recycler view, create an app which **displays a list of items, each item contains a picture, 2 text views and a checkbox**. Be sure to have enough pictures, one text view should contain a person’s name, the other one some additional text.  See example, but instead of date and o/p/n mark a checkbox, which controls background colour of the item, checked is red unchecked is green.
 * Recycler view uses the adapter pattern. According your Head First Design Pattern textbook this pattern comprises a client, target, adapter and adaptee. See the example discussed by A. Vogella, and indicate client, target, adapter and adaptee.
 * Describe when to use a LayoutInflater, describe typical situations where you could apply layout inflaters. 
-* Download example dhapp-one, install this app on your android device and run it.
-The back-end is up and running, so you should be able to add and delete items.
-Also solve the issues mentioned in PostTask:
-
-![Bild](https://github.com/FontysVenlo/android-introduction/raw/master/docs/img/image.png)
-
-*still some android issues to be solved, like updating UI from async thread
-See line 52, 55, 58
-Possible solution, see GetTask where id is passed as parameter in the constructor*
-
-
-* Based on dhapp-one implement get, post, put, delete and getall for your own back-end entity which you already created last week.
-
-
-
+* Make sure you do **all assignments from the Vogella Android tutorial!** which are 
+* [Exercise first UI](https://www.vogella.com/tutorials/Android/article.html#exercise_first_ui_interface) 
+* [Exercise add radio buttons](https://www.vogella.com/tutorials/Android/article.html#exercise-adding-radio-buttons) 
+* [Exercise temperature converter](https://www.vogella.com/tutorials/Android/article.html#tutorialtemperature) 
