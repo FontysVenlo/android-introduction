@@ -31,7 +31,7 @@ jobs:
           path: output
       - uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
-          args: "--standalone --output=output/README.docx import-existing-android-app-to-github.md"
+          args: "--standalone --output=output/import-existing-android-app-to-github.docx import-existing-android-app-to-github.md"
       - uses: actions/upload-artifact@master
         with:
           name: import-existing-android-app-to-github.docx
