@@ -10,7 +10,7 @@ Question is how can you now put your existing Android app code into you reposito
 
 First of all, make a local git repository in Android studio.
 
-### Enable Version Control Integration![](assets/1f4340445ef2ff00580e584e6c91395816aef8854be92b9403f3a2b929f6a045.png)
+### Enable Version Control Integration![](./assets/1f4340445ef2ff00580e584e6c91395816aef8854be92b9403f3a2b929f6a045.png)
 
 In the top menu of Android Studio, choose "Enable Version Control Integration".
 
