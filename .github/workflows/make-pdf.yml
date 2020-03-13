@@ -36,3 +36,19 @@ jobs:
         with:
           name: import-existing-android-app-to-github.docx
           path: output
+  make_pdf_from_docx:
+    runs-on: [ubuntu-18.04]
+    steps:
+      - name: download previous created docx
+        uses: actions/download-artifact@v1
+        with:
+          name: homework
+      - name: create pdf from docx
+        uses: docker://pandoc/latex:2.9
+        with: # needs a README in your repo root!
+          args: "--standalone --output=output/import-existing-android-app-to-github2.pdf output/import-existing-android-app-to-github.docx"
+      - name: upload new pdf
+        uses: actions/upload-artifact@master
+        with:
+          name: import-existing-android-app-to-github2.pdf
+          path: output
