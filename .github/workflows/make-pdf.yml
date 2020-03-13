@@ -9,30 +9,12 @@ jobs:
       - uses: actions/checkout@v2
       - run: mkdir output
       - uses: docker://pandoc/latex:2.9
+        with: 
+          args: "--version"
+      - uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
           args: "--standalone --output=output/android-introduction.pdf android-introduction.md"
       - uses: actions/upload-artifact@master
         with:
           name: android-introduction-and-assignments.pdf
-          path: output
-      - uses: docker://pandoc/latex:2.9
-        with: # needs a README in your repo root!
-          args: "--standalone --output=output/android-introduction.docx android-introduction.md"
-      - uses: actions/upload-artifact@master
-        with:
-          name: android-introduction-and-assignments.docx
-          path: output
-      - uses: docker://pandoc/latex:2.9
-        with: # needs a README in your repo root!
-          args: "--standalone --output=output/import-existing-android-app-to-github.pdf import-existing-android-app-to-github.md"
-      - uses: actions/upload-artifact@master
-        with:
-          name: import-existing-android-app-to-github.pdf
-          path: output
-      - uses: docker://pandoc/latex:2.9
-        with: # needs a README in your repo root!
-          args: "--standalone --output=output/import-existing-android-app-to-github.docx import-existing-android-app-to-github.md"
-      - uses: actions/upload-artifact@master
-        with:
-          name: import-existing-android-app-to-github.docx
           path: output
