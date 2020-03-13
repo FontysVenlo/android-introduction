@@ -42,7 +42,7 @@ jobs:
       - name: download previous created docx
         uses: actions/download-artifact@v1
         with:
-          name: homework
+          name: output
       - name: create pdf from docx
         uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
