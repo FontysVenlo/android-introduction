@@ -6,12 +6,16 @@ jobs:
   convert_via_pandoc:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
-      - run: mkdir output
-      - uses: docker://pandoc/latex:2.9
+      - name: checkout code
+        uses: actions/checkout@v2
+      - name: create output directory
+        run: mkdir output
+      - name: build pdf 1
+        uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
           args: "--standalone --output=output/android-introduction.pdf android-introduction.md"
-      - uses: actions/upload-artifact@master
+      - name: upload pdf 1
+        uses: actions/upload-artifact@master
         with:
           name: android-introduction-and-assignments.pdf
           path: output
@@ -35,4 +39,17 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: import-existing-android-app-to-github.docx
+          path: output
+      - name: download docx 
+        uses: actions/download-artifact@master
+        with:
+          name: import-existing-android-app-to-github.docx
+          path: output
+      - name: create pdf from docx 
+        uses: docker://pandoc/latex:2.9
+        with: # needs a README in your repo root!
+          args: "--standalone --output=output/import-existing-android-app-to-github2.pdf output/import-existing-android-app-to-github.docx"
+      - uses: actions/upload-artifact@master
+        with:
+          name: import-existing-android-app-to-github2.pdf
           path: output
