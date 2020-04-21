@@ -62,7 +62,8 @@ Create and edit a nodejs file (in my case) **push\_note.js**, this file should h
 ```javascript
 var FCM = require('fcm-push');
 
-var serverkey = '.....O.; // your server key var fcm = new FCM(serverkey);
+var serverkey = '.....O.; // your server key 
+var fcm = new FCM(serverkey);
 
 var message = {
   to : '......', // your android device id collapse_key : 'collapse-key',
