@@ -108,34 +108,29 @@ The middleware folder is going to contain the application logic, in this case tr
 
 Please note: middleware should be a sub folder of the server folder.
 
+```
 // tracker.js
 
 module.exports = function() {
+  return function tracker(req, res, next) {
 
-return function tracker(req, res, next) {
+    console.log(\'Request tracking middleware triggered on %s.\', req.url);
 
-console.log(\'Request tracking middleware triggered on %s.\', req.url);
+    var start = process.hrtime();
 
-var start = process.hrtime();
+    res.once(\'finish\', function() {
+      var diff = process.hrtime(start);
+      var ms = diff\[0\] \* 1e3 + diff\[1\] \* 1e-6;
+      console.log(\'The request processing time is %d ms.\', ms)
+    });
 
-res.once(\'finish\', function() {
+    next();
 
-var diff = process.hrtime(start);
-
-var ms = diff\[0\] \* 1e3 + diff\[1\] \* 1e-6;
-
-console.log(\'The request processing time is %d ms.\', ms);
-
-});
-
-next();
-
+  };
 };
-
-};
-
+```
 And the \"initial\" entry in middleware.json has been extended as follows:
-
+```
 // middleware.json
 
 ..
@@ -155,7 +150,7 @@ And the \"initial\" entry in middleware.json has been extended as follows:
 ..
 
 }
-
+```
 The app logic will be executed when a http POST request is executed on /api/Employees.
 
 Next adding push notification logic, but first run in the app folder:
