@@ -87,9 +87,11 @@ Execute:
 
 \$ node push\_note
 
-Response is like the following json string
+Response in the command line interface is like the following json string:
 
-Successfully sent with response : {\"multicast\_id\":6834835332327396821,\"success\":1,\"failure\":0,\"canonical\_ids\":0,\"results\":\[{\"message\_id\":\"0:1555511063680783%a7a2e6b0a7a2e6b0\"}\]}
+```Successfully sent with response : {\"multicast\_id\":6834835332327396821,\"success\":1,\"failure\":0,\"canonical\_ids\":0,\"results\":\[{\"message\_id\":\"0:1555511063680783%a7a2e6b0a7a2e6b0\"}\]} ```
+
+You should now see your push notification on your phone.
 
 ## Loopback application logic
  
@@ -105,7 +107,7 @@ Affected folders/files:
 
 Suppose you have created a nodejs app with two models Car and Employee like in simple simple-app-logic.zip.
 
-The middleware folder is going to contain the application logic, in this case trackter.js, which just prints some logging info.
+The middleware folder is going to contain the application logic, in this case tracker.js, which just prints some logging info.
 
 Please note: middleware should be a sub folder of the server folder.
 
