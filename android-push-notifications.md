@@ -69,12 +69,13 @@ var message = {
     wereld : 'is rond' },
     notification : {
       title : 'Title of the notification', body : 'Body of the notification'
-    } };
-    
-    fcm.send(message, function(err,response){ if(err) {
-       console.log("Something has gone wrong !", err); } else {
-      console.log("Successfully sent with response :",response); 
     }
+  };
+    
+  fcm.send(message, function(err,response){ if(err) {
+     console.log("Something has gone wrong !", err); } else {
+     console.log("Successfully sent with response :",response); 
+  }
 });
 ```
 Execute:
