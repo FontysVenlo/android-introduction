@@ -108,7 +108,7 @@ The middleware folder is going to contain the application logic, in this case tr
 
 Please note: middleware should be a sub folder of the server folder.
 
-```
+```javascript
 // tracker.js
 
 module.exports = function() {
@@ -130,25 +130,16 @@ module.exports = function() {
 };
 ```
 And the \"initial\" entry in middleware.json has been extended as follows:
-```
+```javascript
 // middleware.json
+//..
+    "initial": {
+        "./middleware/tracker": {
+        "paths" : ["/api/Employees"],
+        "methods" : ["POST"]
+    },
 
-..
-
-\"initial\": {
-
-\"./middleware/tracker\": {
-
-\"paths\" : \[\"/api/Employees\"\],
-
-\"methods\" : \[\"POST\"\]
-
-},
-
-..
-
-..
-
+//..
 }
 ```
 The app logic will be executed when a http POST request is executed on /api/Employees.
@@ -158,74 +149,54 @@ Next adding push notification logic, but first run in the app folder:
 \$ npm install fcm-push
 
 Extend the initial entry of middleware.json with:
-
-\"./middleware/pusher\": {
-
-\"paths\" : \[\"/api/Employees\"\],
-
-\"methods\" : \[\"POST\"\]
-
+```javascript
+"./middleware/pusher": {
+    "paths" : ["/api/Employees"],
+    "methods" : ["POST"]
 },
-
+```
 And add pusher.js to the middleware folder:
-
+```javascript
 //pusher.js
-
 var FCM = require(\'fcm-push\');
-
 var serverkey = \'\.....\';
-
 var fcm = new FCM(serverkey);
-
 var message = {
-
-to : \'\.....\',
-
-collapse\_key : \'collapse-key\',
-
-data : {
-
-hallo : \'allemaal\',
-
-wereld : \'is rond\'
-
-},
-
-notification : {
-
-title : \'Title of the notification\',
-
-body : \'Body of the notification\'
-
-}
-
+    to : '.....',
+    collapse_key : 'collapse-key',
+    data : {
+        hallo : 'allemaal',
+        wereld : 'is rond'
+    },
+    notification : {
+        title : 'Title of the notification',
+        body : 'Body of the notification'
+    }
 };
 
 module.exports = function() {
+    return function pusher(req, res, next) {
+    console.log('Request pusher trigggered on %s.', req.url);
 
-return function pusher(req, res, next) {
+    fcm.send(message, function(err,response) {
 
-console.log(\'Request pusher trigggered on %s.\', req.url);
+        if(err) {
+            console.log("Something has gone wrong !", err); 
+        } else {
 
-fcm.send(message, function(err,response){
+        console.log("Successfully sent with response :",response);
 
-if(err) {
+        }
 
-console.log(\"Something has gone wrong !\", err);
+    });
 
-} else {
+    next();
 
-console.log(\"Successfully sent with response :\",response);
-
-}
-
-});
-
-next();
+    };
 
 };
+````
 
-};
 
 4.  **Foregrounded apps**
 
@@ -236,68 +207,53 @@ See
 section 4.1 and see android-lesssimplefirebase.zip and android-simplefirebase.zip
 
 To receive messages in a foregrounded app should extend the FirebaseMessagingService class like:
-
+```java
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
-private static final String TAG = \"FCM Service\";
+    private static final String TAG = \"FCM Service\";
+    
+    @Override
+    public void onMessageReceived(RemoteMessage remoteMessage) {
 
-\@Override
-
-public void onMessageReceived(RemoteMessage remoteMessage) {
-
-// TODO: Handle FCM messages here.
-
-// If the application is in the foreground handle both data and
-
-// notification messages here.
-
-// Also if you intend on generating your own notifications as a
-
-// result of a received FCM
-
-// message, here is where that should be initiated.
-
-Log.d(TAG, \"From: \" + remoteMessage.getFrom());
-
-Log.d(TAG, \"Notification Message Body: \" +
-
-remoteMessage.getNotification().getBody());
-
-final String msg = remoteMessage.getNotification().getBody();
-
-Handler handler = new Handler(Looper.getMainLooper());
-
-handler.post(new Runnable() {
-
-\@Override
-
-public void run() {
-
-Toast.makeText(getApplicationContext(),
-
-msg,Toast.LENGTH\_SHORT).show();
+        // TODO: Handle FCM messages here.
+        // If the application is in the foreground handle both data and
+        // notification messages here.
+        // Also if you intend on generating your own notifications as a
+        // result of a received FCM
+        // message, here is where that should be initiated.
+        
+        Log.d(TAG, "From: " + remoteMessage.getFrom());
+        Log.d(TAG, "Notification Message Body: " + remoteMessage.getNotification().getBody());
+        
+        final String msg = remoteMessage.getNotification().getBody();
+        
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
+      
+            @Override
+            public void run() {        
+                Toast.makeText(getApplicationContext(),            
+                msg,Toast.LENGTH_SHORT).show();        
+            }
+        
+        });
+    
+    }
 
 }
+```
 
-});
+**Toast.makeText()** should run on the main ui thread, Looper solves this issue.
 
-}
+Register this class in **AndroidManifest.xml** file, like:
+```xml
+<service android:name=".MyFirebaseMessagingService" >
+    <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT" />
+    </intent-filter>
+</service>
+```
 
-}
-
-Toast.makeText() should run on the main ui thread, Looper solvs this issue.
-
-Register this class in AndroidManifest.xml file, like:
-
-\<service android:name=\".MyFirebaseMessagingService\"\>
-
-\<intent-filter\>
-
-\<action android:name=\"com.google.firebase.MESSAGING\_EVENT\"/\>
-
-\</intent-filter\>
-
-\</service\>
 
 **References:**
 
