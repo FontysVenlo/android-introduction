@@ -2,7 +2,6 @@ package nl.fontys.thijsdorssers.dhapp;
 
 import android.app.Activity;
 import android.os.AsyncTask;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import java.io.DataOutputStream;

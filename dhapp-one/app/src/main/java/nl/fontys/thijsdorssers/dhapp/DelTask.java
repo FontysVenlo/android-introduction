@@ -1,6 +1,5 @@
 package nl.fontys.thijsdorssers.dhapp;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.widget.TextView;

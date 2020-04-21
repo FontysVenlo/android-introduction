@@ -3,10 +3,8 @@ package nl.fontys.thijsdorssers.dhapp;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.widget.TextView;
-
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
