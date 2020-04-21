@@ -24,7 +24,7 @@ which explains how to send a message to a backgrounded app.
 
 ![2020-04-21 at 10 08](https://user-images.githubusercontent.com/764295/79841732-223f0d00-83b8-11ea-8b57-4b0e214eef7e.png)
 
-Example code android-simplefirebase.zip
+Example code [android-simplefirebase](/android-simplefirebase)
 
 Next send messages to multiple devices, see:
 
@@ -32,11 +32,12 @@ Next send messages to multiple devices, see:
 
 After subscribing an app for a specific topic, you can test.
 
-To test "Subscribe the client app to a topic" use the firebase console: Cloud Messaging -\> New Notification -\> step 1 -\>next -\> in target select topic -\> next -\> in Scheduling set "Send to eligible users" to Now -\> Review -\> Publish.
+To test "Subscribe the client app to a topic" use the firebase console: 
+- Cloud Messaging -\> New Notification -\> step 1 -\>next -\> in target select topic -\> next -\> in Scheduling set "Send to eligible users" to Now -\> Review -\> Publish.
 
-See example code android-lesssimplefirebase.zip.
+See example code [android-lesssimplefirebase](android-lesssimplefirebase).
 
-2.  **Nodejs sends push notification request**
+## Nodejs sends push notification request
 
 You already have a firebase project. For this part you need the device id and the server key.
 
@@ -52,11 +53,12 @@ Copy and past the server key.
 
 Set up a nodejs folder (in my case) send\_nodejs\_firebase\_push, cd to this folder.
 
-See example code android-send\_nodejs\_firebase\_push.zip
+See example code [android-send_nodejs_firebase_push](android-send_nodejs_firebase_push).
 
 \$ cd send\_nodejs\_firebase\_push
 
-Create and edit a nodejs file (in my case) push\_note.js, this file should have the following content:
+Create and edit a nodejs file (in my case) **push\_note.js**, this file should have the following content:
+
 ```javascript
 var FCM = require('fcm-push');
 
@@ -88,13 +90,11 @@ Response is like the following json string
 
 Successfully sent with response : {\"multicast\_id\":6834835332327396821,\"success\":1,\"failure\":0,\"canonical\_ids\":0,\"results\":\[{\"message\_id\":\"0:1555511063680783%a7a2e6b0a7a2e6b0\"}\]}
 
-3.  **Loopback application logic**
-
-Download example: android-simple-app-logic.zip
-
+## Loopback application logic
+ 
+Download example: [android-simple-app-logic](android-simple-app-logic) 
 
 ![2020-04-21 at 10 11](https://user-images.githubusercontent.com/764295/79842037-9679b080-83b8-11ea-877c-e2e9b8b4c04b.png)
-
 
 Affected folders/files:
 
@@ -142,7 +142,7 @@ And the \"initial\" entry in middleware.json has been extended as follows:
 //..
 }
 ```
-The app logic will be executed when a http POST request is executed on /api/Employees.
+The app logic will be executed when a http POST request is executed on **/api/Employees**.
 
 Next adding push notification logic, but first run in the app folder:
 
@@ -198,19 +198,19 @@ module.exports = function() {
 ````
 
 
-4.  **Foregrounded apps**
+## Foregrounded apps
 
 See
 
 <https://www.codementor.io/flame3/send-push-notifications-to-android-with-firebase-du10860kb>
 
-section 4.1 and see android-lesssimplefirebase.zip and android-simplefirebase.zip
+section 4.1 and see [android-lesssimplefirebase](android-lesssimplefirebase) and [android-lesssimplefirebase](android-lesssimplefirebase)
 
-To receive messages in a foregrounded app should extend the FirebaseMessagingService class like:
+To receive messages in a foregrounded app should extend the **FirebaseMessagingService** class like:
 ```java
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
-    private static final String TAG = \"FCM Service\";
+    private static final String TAG = "FCM Service";
     
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -255,7 +255,7 @@ Register this class in **AndroidManifest.xml** file, like:
 ```
 
 
-**References:**
+## References
 
 <http://loopback.io/doc/en/lb3/Adding-application-logic.html>
 
