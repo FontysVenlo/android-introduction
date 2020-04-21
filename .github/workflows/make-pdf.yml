@@ -8,31 +8,25 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: mkdir output
-      - uses: docker://pandoc/latex:2.9
-        with: # needs a README in your repo root!
-          args: "--standalone --output=output/android-introduction.pdf android-introduction.md"
+      - uses: docker://dalibo/pandocker:latest
+        with:
+          args: "android-introduction.md -o output/android-introduction.pdf --toc --pdf-engine=xelatex --template=./eisvogel.latex --listing"
       - uses: actions/upload-artifact@master
         with:
-          name: android-introduction-and-assignments.pdf
+          name: android-introduction.pdf
           path: output
-      - uses: docker://pandoc/latex:2.9
-        with: # needs a README in your repo root!
-          args: "--standalone --output=output/android-introduction.docx android-introduction.md"
-      - uses: actions/upload-artifact@master
+      - uses: docker://dalibo/pandocker:latest
         with:
-          name: android-introduction-and-assignments.docx
-          path: output
-      - uses: docker://pandoc/latex:2.9
-        with: # needs a README in your repo root!
-          args: "--standalone --output=output/import-existing-android-app-to-github.pdf import-existing-android-app-to-github.md"
+          args: "import-existing-android-app-to-github.md -o output/import-existing-android-app-to-github.pdf --toc --pdf-engine=xelatex --template=./eisvogel.latex --listing"
       - uses: actions/upload-artifact@master
         with:
           name: import-existing-android-app-to-github.pdf
           path: output
-      - uses: docker://pandoc/latex:2.9
-        with: # needs a README in your repo root!
-          args: "--standalone --output=output/import-existing-android-app-to-github.docx import-existing-android-app-to-github.md"
+      - uses: docker://dalibo/pandocker:latest
+        with:
+          args: "android-push-notifications.md -o output/android-push-notifications.pdf --toc --pdf-engine=xelatex --template=./eisvogel.latex --listing"
       - uses: actions/upload-artifact@master
         with:
-          name: import-existing-android-app-to-github.docx
+          name: android-push-notifications.pdf
           path: output
+
