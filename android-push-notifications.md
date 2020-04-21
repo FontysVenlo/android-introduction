@@ -24,7 +24,7 @@ which explains how to send a message to a backgrounded app.
 
 ![2020-04-21 at 10 08](https://user-images.githubusercontent.com/764295/79841732-223f0d00-83b8-11ea-8b57-4b0e214eef7e.png)
 
-Example code [android-simplefirebase](/android-simplefirebase)
+Example code [android-simplefirebase](/SimpleFireBase)
 
 Next send messages to multiple devices, see:
 
@@ -35,7 +35,7 @@ After subscribing an app for a specific topic, you can test.
 To test "Subscribe the client app to a topic" use the firebase console: 
 - Cloud Messaging -\> New Notification -\> step 1 -\>next -\> in target select topic -\> next -\> in Scheduling set "Send to eligible users" to Now -\> Review -\> Publish.
 
-See example code [android-lesssimplefirebase](android-lesssimplefirebase).
+See example code [android-lesssimplefirebase](/LessSimpleFireBase).
 
 ## Nodejs sends push notification request
 
@@ -43,7 +43,7 @@ You already have a firebase project. For this part you need the device id and th
 
 The first one already obtained in section "Retrieve the current registration token" of <https://firebase.google.com/docs/cloud-messaging/android/first-message>.
 
-The server key is your firebase server key. Open https://console.firebase.google.com.
+The server key is your firebase server key. Open [https://console.firebase.google.com](https://console.firebase.google.com).
 
 Go to the Project Settings tab CLOUD MESSAGING, if not already done, add a server key by pushing the ADD SERVER KEY button.
 
@@ -53,7 +53,7 @@ Copy and past the server key.
 
 Set up a nodejs folder (in my case) send\_nodejs\_firebase\_push, cd to this folder.
 
-See example code [android-send_nodejs_firebase_push](android-send_nodejs_firebase_push).
+See example code [android-send_nodejs_firebase_push](/send_nodejs_firebase_push).
 
 \$ cd send\_nodejs\_firebase\_push
 
@@ -92,7 +92,7 @@ Successfully sent with response : {\"multicast\_id\":6834835332327396821,\"succe
 
 ## Loopback application logic
  
-Download example: [android-simple-app-logic](android-simple-app-logic) 
+Download example: [android-simple-app-logic](/simple-app-logic) 
 
 ![2020-04-21 at 10 11](https://user-images.githubusercontent.com/764295/79842037-9679b080-83b8-11ea-877c-e2e9b8b4c04b.png)
 
@@ -204,7 +204,7 @@ See
 
 <https://www.codementor.io/flame3/send-push-notifications-to-android-with-firebase-du10860kb>
 
-section 4.1 and see [android-lesssimplefirebase](android-lesssimplefirebase) and [android-lesssimplefirebase](android-lesssimplefirebase)
+section 4.1 and see [android-lesssimplefirebase](/LessSimpleFireBase) and [android-simplefirebase](/SimpleFireBase)
 
 To receive messages in a foregrounded app should extend the **FirebaseMessagingService** class like:
 ```java

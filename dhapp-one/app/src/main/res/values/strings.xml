@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">dhapp</string>
+    <string name="get_by_id">Get by id</string>
+    <string name="get">Get</string>
+    <string name="out_view">Output view</string>
+    <string name="post">Post</string>
+    <string name="lastname">lastname</string>
+    <string name="firstname">firstname</string>
+    <string name="salary">salary</string>
+    <string name="delete">Delete</string>
+</resources>

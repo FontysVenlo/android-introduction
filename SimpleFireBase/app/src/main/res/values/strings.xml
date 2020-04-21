@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SimpleFireBase</string>
+    <string name="msg_token_fmt">Instance ID  Token: %s</string>
+</resources>
