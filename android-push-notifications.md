@@ -1,6 +1,44 @@
+---
+title: "Project 4 - Apps in the Cloud "
+subtitle: "Android push notifications"
+author: [Stefan Sobek]
+date: "2021-01-01"
+subject: "PRJ4 - Android push notifications - Exercises"
+keywords: [Fontys, Markdown, Apps, Cloud]
+lang: "en"
+titlepage: "true"
+logo: "images/fontyslogo.png"
+titlepage-rule-color: "400070"
+page-background : "images/fontyslogo-background.png"
+# reveal settings
+# simple black white league beige sky night serif simple solarized blood moon
+theme: black
+separator: <!-- s -->
+verticalSeparator: <!-- v -->
+notesSeparator: <!-- n -->
+revealOptions:
+  # None - Fade - Slide - Convex - Concave - Zoom
+  transition: 'concave'
+  transition-speed: fast
+  slideNumber: true
+  history: true
+  progress: true
+  width: 1248
+  height: 800
+  parallaxBackgroundImage: 'images/fontys-parallax-all-dark.jpg'
+  parallaxBackgroundSize: '2100px 1024px'
+  #autoSlide: 4000
+  #loop: true
+
+  # center: false
+...
+---
+
 # Android push notifications
 
 This tutorial explains how to implement android push notifications using a nodejs backend.
+
+<!-- s -->
 
 For a better understanding we split this in three steps:
 
@@ -9,6 +47,8 @@ For a better understanding we split this in three steps:
 - loopback-app-logic.
 
 Firstly we will discuss sending messages to backgrounded app, in section 4 we will briefly address messages to foregrounded apps.§
+
+<!-- s -->
 
 ## Notification to android app
 
@@ -22,9 +62,13 @@ For step 1 see also:
 
 which explains how to send a message to a backgrounded app.
 
+<!-- s -->
+
 ![2020-04-21 at 10 08](https://user-images.githubusercontent.com/764295/79841732-223f0d00-83b8-11ea-8b57-4b0e214eef7e.png)
 
 Example code [android-simplefirebase](/SimpleFireBase)
+
+<!-- s -->
 
 Next send messages to multiple devices, see:
 
@@ -35,19 +79,28 @@ After subscribing an app for a specific topic, you can test.
 To test "Subscribe the client app to a topic" use the firebase console: 
 - Cloud Messaging -\> New Notification -\> step 1 -\>next -\> in target select topic -\> next -\> in Scheduling set "Send to eligible users" to Now -\> Review -\> Publish.
 
+
 See example code [android-lesssimplefirebase](/LessSimpleFireBase).
+
+<!-- s -->
 
 ## Nodejs sends push notification request
 
 You already have a firebase project. For this part you need the device id and the server key.
 
+<!-- s -->
+
 The first one already obtained in section "Retrieve the current registration token" of <https://firebase.google.com/docs/cloud-messaging/android/first-message>.
 
 The server key is your firebase server key. Open [https://console.firebase.google.com](https://console.firebase.google.com).
 
+<!-- s -->
+
 Go to the Project Settings tab CLOUD MESSAGING, if not already done, add a server key by pushing the ADD SERVER KEY button.
 
 Copy and past the server key.
+
+<!-- s -->
 
 ![send-nodes-firebase-push](https://user-images.githubusercontent.com/764295/79841875-531f4200-83b8-11ea-9bb5-514663528ab8.png)
 
@@ -55,9 +108,13 @@ Set up a nodejs folder (in my case) send\_nodejs\_firebase\_push, cd to this fol
 
 See example code [android-send_nodejs_firebase_push](/send_nodejs_firebase_push).
 
+<!-- s -->
+
 \$ cd send\_nodejs\_firebase\_push
 
 Create and edit a nodejs file (in my case) **push\_note.js**, this file should have the following content:
+
+<!-- s -->
 
 ```javascript
 var FCM = require('fcm-push');
@@ -81,23 +138,35 @@ var message = {
   }
 });
 ```
+<!-- s -->
+
 Execute:
 
 \$ npm install fcm-push
 
 \$ node push\_note
 
+<!-- s -->
+
 Response in the command line interface is like the following json string:
+
 
 ```Successfully sent with response : {\"multicast\_id\":6834835332327396821,\"success\":1,\"failure\":0,\"canonical\_ids\":0,\"results\":\[{\"message\_id\":\"0:1555511063680783%a7a2e6b0a7a2e6b0\"}\]} ```
 
+
 You should now see your push notification on your phone.
+
+<!-- s -->
 
 ## Loopback application logic
  
 Download example: [android-simple-app-logic](/simple-app-logic) 
 
+<!-- s -->
+
 ![2020-04-21 at 10 11](https://user-images.githubusercontent.com/764295/79842037-9679b080-83b8-11ea-877c-e2e9b8b4c04b.png)
+
+<!-- s -->
 
 Affected folders/files:
 
@@ -108,6 +177,8 @@ Affected folders/files:
 Suppose you have created a nodejs app with two models Car and Employee like in simple simple-app-logic.zip.
 
 The middleware folder is going to contain the application logic, in this case tracker.js, which just prints some logging info.
+
+<!-- s -->
 
 Please note: middleware should be a sub folder of the server folder.
 
@@ -132,7 +203,11 @@ module.exports = function() {
   };
 };
 ```
+
+<!-- s -->
+
 And the \"initial\" entry in middleware.json has been extended as follows:
+
 ```javascript
 // middleware.json
 //..
@@ -145,20 +220,31 @@ And the \"initial\" entry in middleware.json has been extended as follows:
 //..
 }
 ```
+
+<!-- s -->
+
+
 The app logic will be executed when a http POST request is executed on **/api/Employees**.
 
 Next adding push notification logic, but first run in the app folder:
 
 \$ npm install fcm-push
 
+<!-- s -->
+
 Extend the initial entry of middleware.json with:
+
 ```javascript
 "./middleware/pusher": {
     "paths" : ["/api/Employees"],
     "methods" : ["POST"]
 },
+
 ```
+<!-- s -->
+
 And add pusher.js to the middleware folder:
+
 ```javascript
 //pusher.js
 var FCM = require(\'fcm-push\');
@@ -198,7 +284,9 @@ module.exports = function() {
     };
 
 };
-````
+```
+
+<!-- s -->
 
 
 ## Foregrounded apps
@@ -209,7 +297,10 @@ See
 
 section 4.1 and see [android-lesssimplefirebase](/LessSimpleFireBase) and [android-simplefirebase](/SimpleFireBase)
 
+<!-- s -->
+
 To receive messages in a foregrounded app should extend the **FirebaseMessagingService** class like:
+
 ```java
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
@@ -245,10 +336,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
 }
 ```
+<!-- s -->
 
 **Toast.makeText()** should run on the main ui thread, Looper solves this issue.
 
 Register this class in **AndroidManifest.xml** file, like:
+
 ```xml
 <service android:name=".MyFirebaseMessagingService" >
     <intent-filter>
@@ -257,6 +350,7 @@ Register this class in **AndroidManifest.xml** file, like:
 </service>
 ```
 
+<!-- s -->
 
 ## References
 
