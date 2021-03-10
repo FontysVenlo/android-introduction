@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">SimpleFireBase</string>
-    <string name="msg_token_fmt">Instance ID  Token: %s</string>
-    <string name="msg_subscribed">Subscription successful</string>
-    <string name="msg_subscribe_failed">Subscription failed</string>
-</resources>
