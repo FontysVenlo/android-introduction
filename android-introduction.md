@@ -35,78 +35,134 @@ revealOptions:
 ---
 
 # Android introduction for project 4
-
-Introduction to Android - PRJ4 course of Fontys Venlo
+<!-- .slide: data-background="https://media.giphy.com/media/10mzF0YmVmZNuw/giphy.gif" -->
+Tutorials and exercises
 
 <!-- s -->
 
 ## Preparation
 
-- Install android studio version (latest), see: [Android Studio](https://developer.android.com/studio)
-- Read “Everything you need to build on Android”, see: [Android Studio features](https://developer.android.com/studio/features/)
-- Read and execute this introduction tutorial, starting in Chapter 5 –up to 7.4 (gridlayout is deprecated), 9 and 10: [Android Tutorial starter](http://www.vogella.com/tutorials/Android/article.html#androidstudio_starter)
-- ⚠ How to put your local code into github, see: [import existing android app to github](import-existing-android-app-to-github.md)
+- Install android studio version (latest)<!-- .element: class="fragment fade-down" -->
+=> [Android Studio](https://developer.android.com/studio)<!-- .element: class="fragment fade-down" -->
+
+- Read “Everything you need to build on Android”<!-- .element: class="fragment fade-down" -->
+=> [Android Studio features](https://developer.android.com/studio/features/)<!-- .element: class="fragment fade-down" -->
+
+- Read and execute the introduction tutorial (chapter 1-3 optional), starting in Chapter 4 – up to 7.4 (gridlayout is deprecated) 8, 9 and 10:<!-- .element: class="fragment fade-down" -->
+=> [Android Tutorial starter](http://www.vogella.com/tutorials/Android/article.html#androidstudio_starter)<!-- .element: class="fragment fade-down" -->
+
+- ⚠ How to put your local code into github<!-- .element: class="fragment fade-down" -->
+=> [import existing android app to github](import-existing-android-app-to-github.md)<!-- .element: class="fragment fade-down" -->
 
 <!-- s -->
 
 ## Assignment 1
 
-* Individual deliverable, implement the following app: Based on constraint layout, this app should contain **3 rows of each 2 buttons and one image view**. If you click the first button then **same image should appear in the image view**, if you click the second button that image should change. Per row you should use different images, so in total you need 6 image resources.
-More information about constraint layout you find in: [Layout information](https://developer.android.com/reference/android/support/constraint/ConstraintLayout)
+- Individual deliverable => implement the following app:<!-- .element: class="fragment fade-down" -->
+- Based on constraint layout, this app should contain<!-- .element: class="fragment fade-down" -->
+
+**3 rows of each 2 buttons and one image view**<!-- .element: class="fragment fade-down" -->
+- If you click the first button then<!-- .element: class="fragment fade-down" -->
+
+**same image should appear in the image view**<!-- .element: class="fragment fade-down" -->
+- if you click the second button that image should change.<!-- .element: class="fragment fade-down" -->
+- Per row you should use different images, so in total you need 6 image resources.<!-- .element: class="fragment fade-down" -->
+- More information about constraint layout you find <!-- .element: class="fragment fade-down" -->
+=> [Layout information](https://developer.android.com/reference/android/support/constraint/ConstraintLayout)<!-- .element: class="fragment fade-down" -->
+
 <!-- s -->
-* Next you *must commit the solution to your personal assignments repository*. Therefore you will receive an invitation link to join the assignment in github classroom. 
+
+**You must commit the solution to your personal assignments repository**
+
+[➡ Individual Repository](https://classroom.github.com/a/a9PfAFrI)<!-- .element: class="fragment fade-down" -->
 
 <!-- s -->
 
 ## Preparations
 
-- Continue reading and executing the introduction tutorial, starting in Chapter 11 – 17.  
-[Android tutorial](http://www.vogella.com/tutorials/Android/article.html#androidstudio_starter)
-- List views more specific recycler views, read and execute: [Android Recycler View](http://www.vogella.com/tutorials/AndroidRecyclerView/article.html) 
-Find out what a LayoutInflater is/does.
-- For more background info on recycler views  see:
-[Recycler view](https://developer.android.com/guide/topics/ui/layout/recyclerview)
+- Continue reading and executing the introduction tutorial, starting in Chapter 11 – 17.<!-- .element: class="fragment fade-down" -->  
+
+[➡ Android tutorial](http://www.vogella.com/tutorials/Android/article.html#androidstudio_starter)<!-- .element: class="fragment fade-down" -->
+
+- List views - more specific recycler views, read and execute:<!-- .element: class="fragment fade-down" -->
+
+[➡ Android Recycler View](http://www.vogella.com/tutorials/AndroidRecyclerView/article.html) <!-- .element: class="fragment fade-down" -->
+
+- Find out what a LayoutInflater is/does.<!-- .element: class="fragment fade-down" -->
+
+- For more background info on recycler views: <!-- .element: class="fragment fade-down" -->
+
+[➡ Recycler view](https://developer.android.com/guide/topics/ui/layout/recyclerview)<!-- .element: class="fragment fade-down" -->
 
 <!-- s -->
+
 ## Assignment 2
 
-- Individual deliverable, implement the following app: Based on the previous discussed recycler view, create an app which **displays a list of items, each item contains a picture, 2 text views and a checkbox**. Be sure to have enough pictures, one text view should contain a person’s name, the other one some additional text.  See example, but instead of date and o/p/n mark a checkbox, which controls background colour of the item, checked is red unchecked is green.<!-- s -->
-* Recycler view uses the adapter pattern. According your Head First Design Pattern textbook this pattern comprises a client, target, adapter and adaptee. See the example discussed by A. Vogella, and indicate client, target, adapter and adaptee.<!-- s -->
-- Describe when to use a LayoutInflater, describe typical situations where you could apply layout inflaters. <!-- s -->
-- Make sure you do **all assignments from the Vogella Android tutorial!** which are 
-- [Exercise first UI](https://www.vogella.com/tutorials/Android/article.html#exercise_first_ui_interface) 
-- [Exercise add radio buttons](https://www.vogella.com/tutorials/Android/article.html#exercise-adding-radio-buttons) 
-- [Exercise temperature converter](https://www.vogella.com/tutorials/Android/article.html#tutorialtemperature)
+- Individual deliverable => implement the following app:<!-- .element: class="fragment fade-down" -->
+
+- Based on the previous discussed recycler view, create an app which<!-- .element: class="fragment fade-down" -->
+
+**displays a list of items 📄, each item contains a picture 🖼, 2 text views 📃 and a checkbox ☑**<!-- .element: class="fragment fade-down" -->
+
+- Be sure to have enough pictures, one text view should contain a person’s name, the other one some additional text. <!-- .element: class="fragment fade-down" -->
+- See example, but instead of date and o/p/n mark a checkbox ☑, which controls background colour of the item, checked is red 🟥 unchecked is green 🟩.<!-- .element: class="fragment fade-down" -->
+
+<!-- s -->
+
+- Recycler view uses the adapter pattern.
+
+According your Head First Design Pattern textbook this pattern comprises a client, target, adapter and adaptee. See the example discussed by A. Vogella, and indicate client, target, adapter and adaptee.
+
+<!-- s -->
+
+- Describe when to use a LayoutInflater, describe typical situations where you could apply layout inflaters.
+
+<!-- s -->
+Make sure you do<!-- .element: class="fragment fade-down" -->
+
+**all assignments from the Vogella Android tutorial!**<!-- .element: class="fragment fade-down" -->
+
+which are<!-- .element: class="fragment fade-down" -->
+
+- [Exercise first UI](https://www.vogella.com/tutorials/Android/article.html#exercise_first_ui_interface) <!-- .element: class="fragment fade-down" -->
+- [Exercise add radio buttons](https://www.vogella.com/tutorials/Android/article.html#exercise-adding-radio-buttons) <!-- .element: class="fragment fade-down" -->
+- [Exercise temperature converter](https://www.vogella.com/tutorials/Android/article.html#tutorialtemperature)<!-- .element: class="fragment fade-down" -->
 
 <!-- s -->
 
 ## Assignment 3
 
-> Consume a local REST-API
+> Consume a local REST-API (Presidents)<!-- .element: class="fragment fade-down" -->
 
 <!-- s -->
 
 ### Preparation
 
-For this assignment you will just run an easy REST-API based on the president database. This will be run locally!
+For this assignment you will just run an easy REST-API based on the president database. This will be run locally!<!-- .element: class="fragment fade-down" -->
+
+(used that in PPAR as well)<!-- .element: class="fragment fade-down" -->
 
 <!-- s -->
 
-For the setup, do the following steps:
+For the setup, do the following steps:<!-- .element: class="fragment fade-down" -->
 
-* Clone: https://github.com/FontysVenlo/president-postgrest-restapi 
+[Clone: https://github.com/FontysVenlo/president-postgrest-restapi](https://github.com/FontysVenlo/president-postgrest-restapi)<!-- .element: class="fragment fade-down" -->
 
-Start the application with:
+Start the application with:<!-- .element: class="fragment fade-down" -->
+
 ```bash
 docker-compose up
 ```
+<!-- .element: class="fragment fade-down" -->
 
-or 
+or<!-- .element: class="fragment fade-down" --> 
+
 ```bash
 docker-compose up -d
 ```
+<!-- .element: class="fragment fade-down" -->
 
-for daemon mode.
+for daemon mode.<!-- .element: class="fragment fade-down" -->
 
 <!-- s -->
 
@@ -140,7 +196,26 @@ Now you are ready.
 
 <!-- s -->
 
-### Assigment
+- Read and execute Chapter 1-5: <!-- .element: class="fragment fade-down" -->
+[➡ Using Retrofit 2.x as REST client - Tutorial](https://www.vogella.com/tutorials/Retrofit/article.html)<!-- .element: class="fragment fade-down" -->
 
-- Create a UI and consume the REST-API under http://localhost:3000 to receive all the presidents.
-- Show a list of all presidents in your Android App.
+- Read and execute exercise Chapter 8: 
+[➡ Exercise: Using Retrofit to access GitHub API in Android](https://www.vogella.com/tutorials/Retrofit/article.html#exercise-using-retrofit-to-access-github-api-in-android)
+
+<!-- s -->
+
+### Assigment 
+
+- Create a UI and consume the REST-API under <!-- .element: class="fragment fade-down" -->
+
+http://localhost:3000 <!-- .element: class="fragment fade-down" -->
+
+to receive all the presidents.<!-- .element: class="fragment fade-down" -->
+
+**Show a list of all presidents in your Android App**<!-- .element: class="fragment fade-down" -->
+
+<!-- s -->
+
+**Push all assignments to your individual repository**
+
+🖥 ➡ 📄 👀
