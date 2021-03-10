@@ -1,10 +1,46 @@
+---
+title: "Project 4 - Apps in the Cloud "
+subtitle: "Import existing Android app to github"
+author: [Stefan Sobek]
+date: "2021-01-01"
+subject: "Import existing Android app to github"
+keywords: [Fontys, Markdown, Apps, Cloud]
+lang: "en"
+titlepage: "true"
+logo: "images/fontyslogo.png"
+titlepage-rule-color: "400070"
+page-background : "images/fontyslogo-background.png"
+# reveal settings
+# simple black white league beige sky night serif simple solarized blood moon
+theme: black
+separator: <!-- s -->
+verticalSeparator: <!-- v -->
+notesSeparator: <!-- n -->
+revealOptions:
+  # None - Fade - Slide - Convex - Concave - Zoom
+  transition: 'concave'
+  transition-speed: fast
+  slideNumber: true
+  history: true
+  progress: true
+  width: 1248
+  height: 800
+  parallaxBackgroundImage: 'images/fontys-parallax-all-dark.jpg'
+  parallaxBackgroundSize: '2100px 1024px'
+  #autoSlide: 4000
+  #loop: true
+
+  # center: false
+...
+---
+
 # Import existing Android app to github
 
 You have
 a locally existing Android app (just newly created Android application from Android studio), see https://github.com/FontysVenlo/android-introduction of how to do that. 
 already a new and (nearly) empty github repository on github, e.g. the github classroom assignment repository
 
-Question is how can you now put your existing Android app code into you repository?
+Question is how can you now put your existing Android app code into your repository?
 
 ## Make a local Git repo
 

@@ -10,21 +10,21 @@ jobs:
       - run: mkdir output
       - uses: docker://dalibo/pandocker:latest
         with:
-          args: "android-introduction.md -o output/android-introduction.pdf --toc --pdf-engine=xelatex --template=./eisvogel.latex --listing"
+          args: "android-introduction.md -o output/android-introduction.pdf --toc --pdf-engine=xelatex --template=./eisvogel.latex --listing -V mainfont=\"DejaVu Sans\""
       - uses: actions/upload-artifact@master
         with:
           name: android-introduction.pdf
           path: output
       - uses: docker://dalibo/pandocker:latest
         with:
-          args: "import-existing-android-app-to-github.md -o output/import-existing-android-app-to-github.pdf --toc --pdf-engine=xelatex --template=./eisvogel.latex --listing"
+          args: "import-existing-android-app-to-github.md -o output/import-existing-android-app-to-github.pdf --toc --pdf-engine=xelatex --template=./eisvogel.latex --listing -V mainfont=\"DejaVu Sans\""
       - uses: actions/upload-artifact@master
         with:
           name: import-existing-android-app-to-github.pdf
           path: output
       - uses: docker://dalibo/pandocker:latest
         with:
-          args: "android-push-notifications.md -o output/android-push-notifications.pdf --toc --pdf-engine=xelatex --template=./eisvogel.latex --listing"
+          args: "android-push-notifications.md -o output/android-push-notifications.pdf --toc --pdf-engine=xelatex --template=./eisvogel.latex --listing -V mainfont=\"DejaVu Sans\""
       - uses: actions/upload-artifact@master
         with:
           name: android-push-notifications.pdf
